@@ -1,0 +1,159 @@
+{% load static %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>FIND ME</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+	<script src="assets/js/Chart.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="fa fa-circle"></i>FIND ME</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url "homeview" %}">HOME</a></li>
+            <li class="active"><a href="{% url "optionsview" %}">OPTIONS</a></li>
+            <li><a href="/logout">SIGN OUT</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<div id="blue">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+				<h1 style="color:white;">FIND PERSON</h1>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!--  bluewrap -->
+
+	<br>
+
+<!--
+<form action="{% url "person-create" %}" method="POST">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_ul }}
+  </ul>
+  <input type="submit" value="Save" />
+</form>-->
+
+<form id= "findform" class="form-horizontal" role="form" action="{% url 'select-device' %}" method="POST">
+{% csrf_token %}
+
+
+<!--
+<div class="form-group"><label class="col-md-2 control-label" for="Roll_number">Roll number</label><div class="col-md-4"><input class="form-control" id="rollno" maxlength="70" name="rollno" placeholder="Roll number" title="" type="number" /></div></div>
+
+  
+
+
+    <div class="form-actions">
+        <input class="btn btn-primary btn-large" type="submit" value="Submit"/>
+        {% block extra_buttons %}
+        {% endblock extra_buttons %}
+    </div>-->
+
+<style>
+    ul { display:table; margin:0 auto;
+text-align:center;}
+	
+    input { display:table; margin:0 auto;
+align:center;}
+
+</style>
+ <ul>
+    {{ form.as_ul }}
+  </ul>
+<br>
+  <input type="submit" value="Submit" />
+</form>
+
+
+<br><br>
+<br>
+<br>
+<br>
+<br>
+	<div id="r">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h4>This is a service developed at IIIT Delhi</h4>
+					<p>It helps you to find people in the campus based on where their WiFi enabled device (Laptop, Mobile, Tablet) was last conected to an access point in the campus.</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><! -- r wrap -->
+	
+	
+	<!-- FOOTER -->
+	<div id="f">
+		<div class="container">
+			<div class="row centered">
+				
+		
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- Footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

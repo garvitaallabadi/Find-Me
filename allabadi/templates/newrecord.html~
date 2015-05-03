@@ -1,0 +1,15 @@
+<h1> We are here! </h1>
+
+Welcome {{ request.user.first_name}} {{ request.user.last_name}}
+
+
+<form action="{% url "person-create" %}" method="POST">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_ul }}
+  </ul>
+  <input type="submit" value="Save" />
+</form>
+
+
+<a href="/logout">Sign Out</a>

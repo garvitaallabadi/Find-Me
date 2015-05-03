@@ -1,0 +1,30 @@
+<h1> location </h1>
+
+<table style="width:600px">
+
+<tr>
+  <th>Uid</th>
+  <th>Mac</th>
+  <th>Roll number</th>		
+  <th>Batch</th>
+  <th>Access</th>
+  <th>Email</th>
+  
+
+</tr>
+<tr>
+{% for d1 in details %}
+  <td>{{d1.uid}} </td>
+  <td> {{d1.mac_hash}}</td>		
+  <td>{{d1.rollno}}</td>
+  <td>{{d1.batch}}</td>
+  <td>{{d1.access}}</td>
+  <td>{{d1.email}}</td>
+{% endfor %}
+</tr>
+
+</table>
+
+<br>
+
+<a href="/logout">Sign Out</a>
